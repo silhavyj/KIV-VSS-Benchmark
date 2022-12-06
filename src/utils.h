@@ -54,3 +54,5 @@ namespace kiv_vss::utils
         return sizes;
     }
 }
+
+// EOF

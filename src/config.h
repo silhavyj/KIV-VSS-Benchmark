@@ -17,3 +17,5 @@ namespace kiv_vss::config
 
     static std::vector<std::size_t> element_counts = utils::Generate_Test_Data_Sizes<Data_Type>(Start_Collection_Size, End_Collection_Size, Step_Size);
 }
+
+// EOF
