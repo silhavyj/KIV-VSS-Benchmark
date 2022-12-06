@@ -43,12 +43,12 @@ namespace kiv_vss::utils
     }
 
     template<typename Type>
-    [[nodiscard]] constexpr std::vector<std::size_t> Generate_Test_Data_Sizes()
+    [[nodiscard]] constexpr std::vector<std::size_t> Generate_Test_Data_Sizes(std::size_t start, std::size_t stop, std::size_t step)
     {
         std::vector<std::size_t> sizes;
-        for (std::size_t i = 100; i <= 1000; i += 100)
+        for (std::size_t size = start; size <= stop; size += step)
         {
-            sizes.push_back(Convert_Size_To_Number_Of_Elements<Type>(Convert_KB_To_B(i)));
+            sizes.push_back(Convert_Size_To_Number_Of_Elements<Type>(size));
         }
 
         return sizes;
