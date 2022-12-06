@@ -35,7 +35,7 @@ bar1 = ax.bar(x - width/2, travel_expenses, width, label='std::list')
 bar2 = ax.bar(x + width/2, office_expenses, width, label='std::vector')
  
 #ax.set_xlabel('Year')
-ax.set_ylabel('Time of execution [ms]')
+ax.set_ylabel('Time of execution (removing all elements) [ms]')
 ax.set_title('Removing elements from the end of the collection')
 ax.set_xticks(x)
 ax.set_xticklabels([round(tick, 2) for tick in ticks])

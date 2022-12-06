@@ -18,8 +18,8 @@ ticks = []
 
 for size in keys:
     size = str(size)
-    data_a.append(statistics.median(json_data[size]['vector']) / 1000)
-    data_b.append(statistics.median(json_data[size]['list']) / 1000)
+    data_a.append(round(statistics.median(json_data[size]['vector']) / 1000, 2))
+    data_b.append(round(statistics.median(json_data[size]['list']) / 1000, 2))
     ticks.append(int(size) / 1024)
 
 office_expenses = data_a
@@ -37,7 +37,7 @@ bar1 = ax.bar(x - width/2, travel_expenses, width, label='std::list')
 bar2 = ax.bar(x + width/2, office_expenses, width, label='std::vector')
  
 #ax.set_xlabel('Year')
-ax.set_ylabel('Time of execution [s]')
+ax.set_ylabel('Time of execution (removing all elements) [s]')
 ax.set_title('Removing elements from the middle of the collection')
 ax.set_xticks(x)
 ax.set_xticklabels(ticks)
