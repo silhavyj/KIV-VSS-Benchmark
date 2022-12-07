@@ -4,7 +4,7 @@ This assignment was to benchmark the performance of element deletion from an `st
 
 ## Solution
 
-I decided to measure how much time it takes to delete an entire collection by repetitively deleting an element from the same position. I also ran this benchmark test on different collection sized.
+I decided to measure how much time it takes to delete an entire collection by repetitively deleting an element from the same position. I also ran this benchmark test on different collection sizes.
 
 The following snippet measures how much time it takes to delete a single element.
 
@@ -58,7 +58,7 @@ To view the code disassembly, I used the following online tool https://godbolt.o
 
 ## Results
 
-Each value shown in the following charts was calculated as the median of ten independent measurements (run of the program).
+Each value shown in the following charts was calculated as the median of ten independent measurements.
 
 Parameters of the device used in the benchmark: 
 - ThinkPad T540p 
@@ -70,19 +70,19 @@ Parameters of the device used in the benchmark:
 
 <img src="img/Figure_begin.png">
 
-Removing the first element from an `std::vector` is significantly slower than removing the first element from an `std::list`. Every time the first element is erased, the remaining elements have to be moved by one position towards the first element that was just released.
+Removing the first element from an `std::vector` is significantly slower than removing the first element from an `std::list`. Every time the first element is erased, the remaining elements have to be moved by one position towards the first element that was just removed.
 
 ### Removing an element from the end of the container
 
 <img src="img/Figure_end.png">
 
-Removing the last element from an `std::vector` turns out to be faster than removing the last element from an `std::list`. While the difference may not be all that significant (roughly 300 ms with a collection of a size of 100 MB), it can still improved the overall performance of the application. 
+Removing the last element from an `std::vector` turns out to be faster than removing the last element from an `std::list`. While the difference may not be all that significant (roughly 300 ms with a collection of a size of 100 MB), it can still improve the overall performance of the application. 
 
 ### Removing an element from the middle of the container
 
 <img src="img/Figure_middle.png">
 
-When using an `std::list`, removing an element from the middle of the collection has the worst performance as we need to iterate to the middle of the collection every single time. Assuming that there are *n* elements in the collection, removing an element from the middle of the collection has a time complexity of `O(n^2)`. An `std::vector`, on the other hand, is optimized for this kind of deletion, giving us ultimately a significant advantage over using an `std::list`
+When using an `std::list`, removing an element from the middle of the collection has the worst performance as it has to iterate to the middle of the collection every single time. Assuming that there are *n* elements in the collection, removing an element from the middle of the collection has a time complexity of `O(n)`, so the entire process of deleting all the elements ends up being `O(n^2)`. An `std::vector`, on the other hand, is optimized for this kind of deletion, giving us ultimately a significant advantage over the use of an `std::list`
 
 
 
@@ -90,7 +90,7 @@ When using an `std::list`, removing an element from the middle of the collection
 
 ### Configuration
 
-Depending on your desire, you will need to uncomment on of the following methods in `main.cpp` as well as adjust the configuration in `config.h`.
+Depending on your desires, you will need to uncomment one of the following methods in `main.cpp` as well as adjust the configuration in `config.h`.
 
 ```c++
 int main()
