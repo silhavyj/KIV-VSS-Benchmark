@@ -50,9 +50,11 @@ template<typename Container, NRemoval_Type removal_type>
 
 Times collected from this method are being added up until there are no elements left in the collection. To measure time precisely, I used `std::chrono::high_resolution_clock`. One could argue that the `switch` statement affects the results. However, since the method is templated, it is all resolved at compile time, leaving only one of the three options in the body of the method. To verify this, I checked out the disassembled version of the program.
 
-### Removing an element from the beginning of the container
+### Example of a code disassembly
 
-<img src="img/disassembly_begin.svg">
+To view the code disassembly, I used the following online tool https://godbolt.org/. The following code shows the disassembly of removing an element from the beginning of the container.
+
+<img src="img/disassembly_begin.png">
 
 ## Results
 
