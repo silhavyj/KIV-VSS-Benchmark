@@ -72,7 +72,7 @@ int main()
 
     // kiv_vss::Run_Benchmark<benchmark::NRemoval_Type::End>("end.json");   
     // kiv_vss::Run_Benchmark<benchmark::NRemoval_Type::Begin>("begin.json");
-    kiv_vss::Run_Benchmark<benchmark::NRemoval_Type::Middle>("middle.json");
+    // kiv_vss::Run_Benchmark<benchmark::NRemoval_Type::Middle>("middle.json");
 
     return 0;
 }
