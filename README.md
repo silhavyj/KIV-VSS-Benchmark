@@ -1,6 +1,6 @@
 ## Assignment
 
-This assignment was to benchmark the performance of element deletion from an `std::vector` and a `std::list`. There were three scenarios taken into account, representing the position from which an element can be erased - beginning, end, and the middle of the collection.
+This assignment was to benchmark the performance of element deletion from an `std::vector` and an `std::list`. There were three scenarios taken into account, representing the position from which an element can be erased - beginning, end, and the middle of the collection.
 
 ## Solution
 
@@ -57,6 +57,14 @@ To view the code disassembly, I used the following online tool https://godbolt.o
 <img src="img/disassembly_begin.png">
 
 ## Results
+
+Each value shown in the following charts was calculated as the median of ten independent measurements (run of the program).
+
+Parameters of the device used in the benchmark: 
+- ThinkPad T540p 
+- Pop!_OS 21.10 x86_64
+- Intel i7-4710MQ (8) @ 3.500GHz
+- 8 GB RAM
 
 ### Removing an element from the beginning of the container
 
